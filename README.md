@@ -41,7 +41,10 @@ MusictrackAPI is a Go-based API designed to manage music tracks. It allows users
 
 2. install dependencies:
 
-   ```go mod tidy```
+   ```
+   go mod tidy
+
+   ```
 
 
 ## Database Configuration
@@ -57,12 +60,12 @@ MusictrackAPI is a Go-based API designed to manage music tracks. It allows users
 2. Create a Database:
 
 ```
-createdb your_database_name
+  createdb your_database_name
 ```
 3. Connection string
 
 ```
-DATABASE_URL=postgres://your_database_user:your_database_password@localhost:5432/your_database_name?sslmode=disable
+  DATABASE_URL=postgres://your_database_user:your_database_password@localhost:5432/your_database_name?sslmode=disable
 ```
 replace your_database_user, your_database_password and your_database_name with your actiual PostgreSQL credentials.
   
@@ -93,10 +96,11 @@ replace your_database_user, your_database_password and your_database_name with y
       
    ```
    SPOTIFY_CLIENT_ID=your_client_id
+   
    SPOTIFY_CLIENT_SECRET=your_client_secret
    ```
 
-   Replace your_client_id,and  your_client_secret with the corresponding values obtained from the Spotify Developer 
+   Replace   your_client_id,  and  your_client_secret  with the corresponding values obtained from the Spotify Developer 
    Dashboard.
 
 ## Swagger Documentation
@@ -119,7 +123,7 @@ go run main.go
 3. **Access Swagger UI in your browser:**
 
  ```
-http://localhost:8080/swagger/index.html
+  http://localhost:8080/swagger/index.html
 ```
 
  Swagger provides an interactive UI to explore and test API endpoints.
