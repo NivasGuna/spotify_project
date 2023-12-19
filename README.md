@@ -67,14 +67,26 @@ DATABASE_URL=postgres://your_database_user:your_database_password@localhost:5432
 replace your_database_user, your_database_password and your_database_name with your actiual PostgreSQL credentials.
   
 
-## Spotify Authentication
+## Spotify Configuration
 
-To use the Spotify features, you'll need to set up authentication with Spotify. Here are the steps:
+1. **Create a Spotify Developer Account**
 
-1. Go to the Spotify Developer Dashboard (https://developer.spotify.com/dashboard/applications).
-2. Create a new application.
-3. Obtain the Client ID and Client Secret.
-4. Set up environment variables or configuration files to store these keys securely.
+    - Go to the Spotify Developer Dashboard.
+    - Log in or sign up for a Spotify account.
+  
+2. **Create a New Application++
+
+    - After logging in, go to the Dashboard and click on "Create an App."
+    - Fill in the required information for your application (name, description, etc.).
+    - Once created, you'll see your application listed on the Dashboard.
+      
+3. **Get Client ID, Client Secret, and Redirect URI**
+
+    - Open your application from the Dashboard.
+    - Note down the ***Client ID*** and ***Client Secret***. These will be used in your application for authentication.
+    - Set up a Redirect URI. This is where Spotify will redirect after authentication. For development purposes, set it to 
+     http://localhost:8080/callback or any URL your application will handle.
+
 
 ## Swagger Documentation
 
