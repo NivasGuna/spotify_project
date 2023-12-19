@@ -129,9 +129,13 @@ http://localhost:8080/swagger/index.html
 
 Available Endpoints
 
-  1.GET /getisrc/{isrc}: Retrieves a track by its ISRC.
-  2.GET /getartist/{artistname}: Retrieves tracks by the artist's name.
-  3.POST /postisrc: Saves or searches for a track by its ISRC.
-  4.PUT /updatetrack/{isrc}: Updates track details by ISRC.
+```
+   GET /getisrc/{isrc}          //Retrieves a track by its ISRC.
 
+   GET /getartist/{artistname}  //Retrieves tracks by the artist's name.
+
+   POST /postisrc               //Saves or searches for a track by its ISRC.
+
+   PUT /updatetrack/{isrc}      //Updates track details by ISRC.
+```
   Make sure to check the Swagger documentation for detailed information about request and response payloads.
