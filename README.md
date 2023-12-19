@@ -143,3 +143,23 @@ Available Endpoints
    PUT /updatetrack/{isrc}      //Updates track details by ISRC.
 ```
   Make sure to check the Swagger documentation for detailed information about request and response payloads.
+
+## Output
+**Swagger**
+![swaggerhome](https://github.com/NivasGuna/spotify_project/assets/152397268/13af0139-b46a-4ba9-9568-3cd6410f3bc2)
+
+**GetByIsrc**
+![getIsrc](https://github.com/NivasGuna/spotify_project/assets/152397268/7361c43a-ce9e-478c-9a9f-e26173661f52)
+
+**GetByArtist**
+![getartist](https://github.com/NivasGuna/spotify_project/assets/152397268/9d62e782-8043-4ec6-a2a7-8a879afa5909)
+
+**PostIrsc**
+![postIsrc](https://github.com/NivasGuna/spotify_project/assets/152397268/882ac682-1078-457a-a74a-6e61eca74628)
+
+**PutIrsc**
+![putIsrc](https://github.com/NivasGuna/spotify_project/assets/152397268/08b59439-8bb6-42bb-9d47-98a3c266dad8)
+
+**Database details**
+
+![databasedetail](https://github.com/NivasGuna/spotify_project/assets/152397268/35b1fd10-18c3-4165-8fc5-61b0a7cd39aa)
