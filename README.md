@@ -6,9 +6,9 @@
 3. [Technologies Used](#technologies-used)
 4. [Installation](#installation)
 5. [Database Configuration](#database-configuration)
-6. [Spotify Authentication](#spotify-authentication)
+6. [Spotify Configuration](#spotify-configuration)
 7. [Swagger Documentation](#swagger-documentation)
-8. [Endpoints](#endpoints)
+8. [API Endpoints](#api-endpoints)
 
 
 
@@ -74,7 +74,7 @@ replace your_database_user, your_database_password and your_database_name with y
     - Go to the Spotify Developer Dashboard.
     - Log in or sign up for a Spotify account.
   
-2. **Create a New Application++
+2. **Create a New Application**
 
     - After logging in, go to the Dashboard and click on "Create an App."
     - Fill in the required information for your application (name, description, etc.).
@@ -84,24 +84,43 @@ replace your_database_user, your_database_password and your_database_name with y
 
     - Open your application from the Dashboard.
     - Note down the ***Client ID*** and ***Client Secret***. These will be used in your application for authentication.
-    - Set up a Redirect URI. This is where Spotify will redirect after authentication. For development purposes, set it to 
-     http://localhost:8080/callback or any URL your application will handle.
+    
 
+4. **Set Environment Variables**
+
+    In your project's .env file or environment configuration, set the following variables:
+
+      
+   ```
+   SPOTIFY_CLIENT_ID=your_client_id
+   SPOTIFY_CLIENT_SECRET=your_client_secret
+   ```
+
+   Replace your_client_id,and  your_client_secret with the corresponding values obtained from the Spotify Developer 
+   Dashboard.
 
 ## Swagger Documentation
 
 Swagger is integrated into this API for easy documentation and testing. To access Swagger documentation:
 
-1.Generate Swagger files using Swaggo:
-  swag init
+1. **Generate Swagger files using Swaggo:**
 
-2.Run the application:
+```
+swag init
+```
+
+2. **Run the application:**
   
-  go run main.go
+  ```
+go run main.go
 
-3.Access Swagger UI in your browser:
+```
 
- http://localhost:8080/swagger/index.html
+3. **Access Swagger UI in your browser:**
+
+ ```
+http://localhost:8080/swagger/index.html
+```
 
  Swagger provides an interactive UI to explore and test API endpoints.
 
