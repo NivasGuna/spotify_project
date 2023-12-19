@@ -37,23 +37,34 @@ MusictrackAPI is a Go-based API designed to manage music tracks. It allows users
 
    ```bash
    git clone https://github.com/your_username/music-track-api.git
-   cd music-track-api
+   
 
 2. install dependencies:
 
-   go mod tidy
+   ```go mod tidy```
 
-3. Run the application:
-   
- go run main.go
 
 ## Database Configuration
   
+**PostgreSQL**
 
-The application uses a database to store track information. To configure the database:
+1. **Install PostgreSQL:**
 
-1.Set up a database (MySQL, PostgreSQL, etc.).
-2.Update the database credentials in the config or database package.
+
+   Make sure PostgreSQL is installed on your machine. You can download it from the official website or use a package manager.
+
+
+2. Create a Database:
+
+```
+createdb your_database_name
+```
+3. Connection string
+
+```
+DATABASE_URL=postgres://your_database_user:your_database_password@localhost:5432/your_database_name?sslmode=disable
+```
+replace your_database_user, your_database_password and your_database_name with your actiual PostgreSQL credentials.
   
 
 ## Spotify Authentication
