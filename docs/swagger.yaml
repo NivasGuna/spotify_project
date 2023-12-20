@@ -1,0 +1,139 @@
+basePath: /
+definitions:
+  models.Musictrack:
+    properties:
+      artistName:
+        type: string
+      id:
+        type: integer
+      isrc:
+        type: string
+      spotifyImage:
+        type: string
+      title:
+        type: string
+    type: object
+  service.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API for managing music tracks
+  title: Musictrack API
+  version: "1.0"
+paths:
+  /getartist/{artistname}:
+    get:
+      consumes:
+      - application/json
+      description: Get tracks by the artist's name
+      operationId: get-tracks-by-artist
+      parameters:
+      - description: Name of the artist
+        in: path
+        name: artistname
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Error response
+          schema:
+            $ref: '#/definitions/service.ErrorResponse'
+      summary: Get tracks by artist name
+  /getisrc/{isrc}:
+    get:
+      consumes:
+      - application/json
+      description: Get a track by its ISRC or search and store from Spotify if not
+        found
+      operationId: get-track-by-isrc
+      parameters:
+      - description: ISRC of the track
+        in: path
+        name: isrc
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            $ref: '#/definitions/models.Musictrack'
+        "404":
+          description: Track not found
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Server error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get track by ISRC or search and store from Spotify
+  /postisrc:
+    post:
+      consumes:
+      - application/json
+      description: Save a track in the database by its ISRC or search and store from
+        Spotify if not found
+      operationId: save-or-search-track-by-isrc
+      parameters:
+      - description: ISRC of the track
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            $ref: '#/definitions/models.Musictrack'
+        "400":
+          description: Bad request or ISRC already exists
+          schema:
+            $ref: '#/definitions/service.ErrorResponse'
+      summary: Save or search track by ISRC
+  /updatetrack/{isrc}:
+    put:
+      consumes:
+      - application/json
+      description: Update track information by its ISRC
+      operationId: update-track-by-isrc
+      parameters:
+      - description: ISRC of the track
+        in: path
+        name: isrc
+        required: true
+        type: string
+      - description: Track details to update
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Updated track details
+          schema:
+            $ref: '#/definitions/models.Musictrack'
+        "400":
+          description: Invalid user data
+          schema:
+            $ref: '#/definitions/service.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/service.ErrorResponse'
+      summary: Update track details by ISRC
+swagger: "2.0"
