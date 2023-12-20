@@ -13,7 +13,7 @@ import (
 )
 
 func Initializers() (*gorm.DB,*spotify.Client,error){
-	DB,err:= gorm.Open(postgres.Open("host=otto.db.elephantsql.com user=fpxmkeia password=4La7MjYeEuTDPttPLpxaj-NTbAfBrQxr dbname=fpxmkeia  port=5432 sslmode=disable "), &gorm.Config{});
+	DB,err:= gorm.Open(postgres.Open("postgres://your_username:your_password@localhost:5432/your_database"), &gorm.Config{});
 	if err != nil {
 		log.Fatal("connection error")
 	}
@@ -29,8 +29,8 @@ var SpotifyCredentials = struct {
 	ClientID     string
 	ClientSecret string
 }{
-	ClientID:     "d0a672cffb8149f685b4002ec1bc9da3",
-	ClientSecret: "0795acb1e47345138c00c462374d2158",
+	ClientID:     "Your_client_ID",
+	ClientSecret: "Your_client_Secret",
 }
 
 func authenticateSpotify() *spotify.Client {
